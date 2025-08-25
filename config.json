@@ -1,0 +1,221 @@
+{
+    "app": {
+      "name": "IFFCO Employee Portal",
+      "version": "1.0.0",
+      "description": "Indian Farmers Fertiliser Cooperative Limited - Employee Authentication System",
+      "author": "IFFCO IT Department",
+      "build": "2024-08-25"
+    },
+    "security": {
+      "maxLoginAttempts": 3,
+      "lockoutDuration": 900000,
+      "sessionTimeout": 3600000,
+      "passwordPolicy": {
+        "minLength": 8,
+        "requireUppercase": true,
+        "requireLowercase": true,
+        "requireNumbers": true,
+        "requireSpecialChars": true,
+        "maxAge": 7776000000
+      },
+      "encryptionAlgorithm": "AES-256",
+      "hashAlgorithm": "SHA-256"
+    },
+    "ui": {
+      "theme": {
+        "primary": "#2c5530",
+        "secondary": "#1e3a21",
+        "accent": "#4caf50",
+        "background": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        "text": "#333333",
+        "textLight": "#666666",
+        "success": "#4caf50",
+        "error": "#f44336",
+        "warning": "#ff9800",
+        "info": "#2196f3"
+      },
+      "animations": {
+        "duration": {
+          "fast": 200,
+          "normal": 300,
+          "slow": 600
+        },
+        "easing": {
+          "ease": "cubic-bezier(0.4, 0.0, 0.2, 1)",
+          "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+          "smooth": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+        },
+        "enabled": true,
+        "reducedMotion": false
+      },
+      "responsive": {
+        "breakpoints": {
+          "mobile": "480px",
+          "tablet": "768px",
+          "desktop": "1024px",
+          "wide": "1200px"
+        }
+      }
+    },
+    "features": {
+      "rememberUser": true,
+      "socialLogin": {
+        "google": true,
+        "microsoft": false,
+        "facebook": false
+      },
+      "twoFactorAuth": false,
+      "biometricAuth": false,
+      "darkMode": true,
+      "offline": false,
+      "analytics": false
+    },
+    "api": {
+      "baseUrl": "https://api.iffco.coop",
+      "endpoints": {
+        "login": "/auth/login",
+        "logout": "/auth/logout",
+        "refresh": "/auth/refresh",
+        "profile": "/user/profile",
+        "resetPassword": "/auth/reset-password",
+        "changePassword": "/auth/change-password"
+      },
+      "timeout": 10000,
+      "retries": 3
+    },
+    "database": {
+      "type": "simulation",
+      "users": [
+        {
+          "username": "admin",
+          "empId": "IFFCO001",
+          "name": "System Administrator",
+          "role": "Admin",
+          "department": "IT",
+          "email": "admin@iffco.coop",
+          "phone": "+91-11-26567676",
+          "status": "active",
+          "lastLogin": null,
+          "createdAt": "2024-01-01T00:00:00Z",
+          "permissions": ["read", "write", "delete", "admin"]
+        },
+        {
+          "username": "manager",
+          "empId": "IFFCO002", 
+          "name": "John Doe",
+          "role": "Manager",
+          "department": "Production",
+          "email": "john.doe@iffco.coop",
+          "phone": "+91-11-26567677",
+          "status": "active",
+          "lastLogin": null,
+          "createdAt": "2024-01-15T00:00:00Z",
+          "permissions": ["read", "write"]
+        },
+        {
+          "username": "employee",
+          "empId": "IFFCO003",
+          "name": "Ujjwal Bajpai", 
+          "role": "Employee",
+          "department": "Sales",
+          "email": "ujjwalbajpai@iffco.coop",
+          "phone": "+91-11-26567678",
+          "status": "active",
+          "lastLogin": null,
+          "createdAt": "2024-02-01T00:00:00Z",
+          "permissions": ["read"]
+        },
+        {
+          "username": "demo",
+          "empId": "IFFCO004",
+          "name": "Demo User",
+          "role": "Demo",
+          "department": "Demo",
+          "email": "demo@iffco.coop",
+          "phone": "+91-11-26567679",
+          "status": "active",
+          "lastLogin": null,
+          "createdAt": "2024-08-25T00:00:00Z",
+          "permissions": ["read"]
+        }
+      ]
+    },
+    "localization": {
+      "defaultLanguage": "en",
+      "supportedLanguages": ["en", "hi"],
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24h",
+      "currency": "INR"
+    },
+    "performance": {
+      "monitoring": true,
+      "caching": {
+        "enabled": true,
+        "duration": 300000
+      },
+      "compression": true,
+      "lazyLoading": true,
+      "prefetch": false
+    },
+    "accessibility": {
+      "keyboardNavigation": true,
+      "screenReader": true,
+      "highContrast": true,
+      "fontSize": {
+        "min": 12,
+        "max": 24,
+        "default": 16
+      },
+      "focusIndicator": true
+    },
+    "logging": {
+      "level": "info",
+      "console": true,
+      "remote": false,
+      "categories": {
+        "auth": true,
+        "ui": true,
+        "performance": true,
+        "errors": true
+      }
+    },
+    "development": {
+      "debug": true,
+      "mockData": true,
+      "hotReload": false,
+      "sourceMap": true
+    },
+    "company": {
+      "name": "Indian Farmers Fertiliser Cooperative Limited",
+      "shortName": "IFFCO",
+      "logo": "/assets/images/iffco-logo.png",
+      "website": "https://iffco.coop",
+      "helpdesk": {
+        "phone": "+91-11-26567676",
+        "email": "support@iffco.coop",
+        "website": "https://www.iffco.in/en/contact-us",
+        "hours": "09:00 - 17:00 IST"
+      },
+      "address": {
+        "street": "IFFCO Bhawan, C-1, District Centre",
+        "city": "Saket, New Delhi",
+        "state": "Delhi",
+        "zipCode": "110017",
+        "country": "India"
+      },
+      "social": {
+        "twitter": "@IFFCOIndia",
+        "facebook": "/IFFCOIndia",
+        "linkedin": "/company/iffco",
+        "youtube": "/IFFCOIndia"
+      }
+    },
+    "meta": {
+      "title": "IFFCO Employee Portal - Login",
+      "description": "Secure login portal for IFFCO employees and stakeholders",
+      "keywords": "IFFCO, employee, login, portal, fertilizer, cooperative",
+      "author": "IFFCO IT Department",
+      "robots": "noindex, nofollow",
+      "viewport": "width=device-width, initial-scale=1.0"
+    }
+  }
