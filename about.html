@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About IFFCO - Indian Farmers Fertiliser Cooperative Limited</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: -1;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            object-fit: contain;
+            background: white;
+            padding: 2px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c5530;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-close:hover {
+            background: #f0f0f0;
+            color: #2c5530;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 2rem;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #2c5530;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            background: rgba(44, 85, 48, 0.1);
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            color: #2c5530;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            color: #2c5530;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2c5530 0%, #1e3a21 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(44, 85, 48, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 16px;
+            border-left: 4px solid #2c5530;
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: #2c5530;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            font-size: 1.3rem;
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #2c5530;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #2c5530;
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c5530;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-event {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: #2c5530;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h4 {
+            color: #2c5530;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #2c5530 0%, #1e3a21 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(44, 85, 48, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(44, 85, 48, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 2rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .container {
+                padding: 100px 1rem 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzI5ODA0MSIvPgogIDx0ZXh0IHg9IjMwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iODAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SUZGQ088L3RleHQ+CiAgPHRleHQgeD0iMzAwIiB5PSIyNDAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkluZGlhbiBGYXJtZXJzIEZlcnRpbGlzZXIgQ29vcGVyYXRpdmUgTGltaXRlZDwvdGV4dD4KPC9zdmc+" alt="IFFCO Logo" class="logo">
+                <span class="company-name">IFFCO</span>
+            </div>
+            <button class="nav-close" onclick="window.close()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>About IFFCO</h1>
+            <p class="subtitle">Indian Farmers Fertiliser Cooperative Limited</p>
+            <span class="tagline">Empowering Indian Agriculture Since 1967</span>
+        </div>
+
+        <div class="content-section">
+            <h2>Our Story</h2>
+            <p>
+                Indian Farmers Fertiliser Cooperative Limited (IFFCO) is one of the world's largest fertilizer cooperatives, wholly owned by Indian farmers. Established in 1967, IFFCO was born out of the vision to serve farmers through cooperative efforts and ensure food security for the nation.
+            </p>
+            <p>
+                Founded with the mission to make fertilizers easily accessible to farmers at affordable prices, IFFCO has grown into a multi-state cooperative society with over 36,000 affiliated cooperative societies and more than 5.5 crore farmer members across India.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5.5Cr+</div>
+                    <div class="stat-label">Farmer Members</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">36,000+</div>
+                    <div class="stat-label">Cooperative Societies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">57</div>
+                    <div class="stat-label">Years of Service</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Manufacturing Units</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Our Mission & Vision</h2>
+            <h3>Mission</h3>
+            <p>
+                To serve farmers through cooperative efforts in the field of production, procurement, and distribution of agricultural inputs including fertilizers, seeds, and other products, thereby contributing to food security and improving the socio-economic conditions of the farming community.
+            </p>
+            
+            <h3>Vision</h3>
+            <p>
+                To be a world-class cooperative organization providing comprehensive solutions for sustainable agriculture, ensuring food and nutritional security while empowering farmers through innovative technology and cooperative principles.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Key Services & Products</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Fertilizers</h4>
+                    <p>Manufacturing and distribution of high-quality fertilizers including Urea, DAP, NPK, and specialty fertilizers to enhance crop productivity.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Seeds & Pesticides</h4>
+                    <p>Premium quality seeds for various crops and effective pesticides to protect crops from pests and diseases.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Digital Services</h4>
+                    <p>IFFCO Kisan mobile app and digital platform providing weather updates, crop advisory, and market information.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Farmer Education</h4>
+                    <p>Training programs, workshops, and educational initiatives to promote modern agricultural practices and technology adoption.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-solar-panel"></i>
+                    <h4>Renewable Energy</h4>
+                    <p>Solar power projects and energy-efficient solutions contributing to sustainable agriculture and environmental conservation.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Cooperative Banking</h4>
+                    <p>Financial services through cooperative banks and credit facilities to support farmers' financial needs.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1967</div>
+                    <div class="timeline-event">IFFCO was established as a multi-state cooperative society with the vision to serve farmers.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1975</div>
+                    <div class="timeline-event">First manufacturing unit established in Kalol, Gujarat for ammonia and urea production.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1985</div>
+                    <div class="timeline-event">Expanded operations with new manufacturing facilities and increased production capacity.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1995</div>
+                    <div class="timeline-event">Diversification into specialty fertilizers and agricultural chemicals.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-event">Launch of IFFCO Kisan Sanchar Limited for rural telecommunication services.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-event">Digital transformation with IFFCO Kisan mobile app and online services for farmers.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-event">Continued innovation in sustainable agriculture and renewable energy solutions.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Awards & Recognition</h2>
+            <p>
+                IFFCO has received numerous awards and recognition for its outstanding contribution to agriculture and cooperative development:
+            </p>
+            <ul style="padding-left: 2rem; margin-top: 1rem;">
+                <li style="margin-bottom: 0.5rem;"><strong>Best Cooperative Award</strong> - Government of India</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Excellence in Cooperative Management</strong> - National Cooperative Union of India</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Environmental Excellence Award</strong> - For sustainable practices and green initiatives</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Digital Innovation Award</strong> - For IFFCO Kisan app and digital services</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Corporate Social Responsibility Excellence</strong> - For rural development initiatives</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-building"></i>
+                    <h4>Head Office</h4>
+                    <p>IFFCO Bhawan, C-1, District Centre<br>Saket, New Delhi - 110017</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h4>Phone</h4>
+                    <p>+91-11-26567676<br>+91-11-26567677</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>info@iffco.coop<br>support@iffco.coop</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-globe"></i>
+                    <h4>Website</h4>
+                    <p>www.iffco.coop<br>www.iffco.in</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-button" onclick="window.close()" title="Close Window">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <script>
+        // Smooth scrolling animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.content-section, .hero');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                window.close();
+            }
+        });
+    </script>
+</body>
+</html>
