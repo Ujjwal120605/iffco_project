@@ -42,23 +42,26 @@
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .nav-links {
-  display: flex;
-  gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
 }
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1; /* pushes the nav-links to the right */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto; /* ✅ forces nav links to stay at the right */
+}
+
 
 .nav-link {
   text-decoration: none;
@@ -371,31 +374,33 @@
 </head>
 <body>
     <div class="background"></div>
-
+  
     <nav class="navbar">
-        <div class="nav-container">
-          <!-- Logo -->
-          <div class="nav-logo">
-            <a href="index.html">
-              <img src="iffco_pr.png" alt="IFFCO Logo" class="logo">
-            </a>
-            <span class="company-name">IFFCO</span>
-          </div>
-      
-          <!-- Navigation Links -->
-          <div class="nav-links">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link active">About</a>
-            <a href="products.html" class="nav-link">Products</a>
-            <a href="https://www.iffco.in/en/contact-us" class="nav-link">Contact</a>
-          </div>
-      
-          <!-- Close button (if you want it on smaller screens) -->
-          <button class="nav-close" onclick="window.close()">
-            <i class="fas fa-times"></i>
-          </button>
+      <div class="nav-container">
+        
+        <!-- Logo (Left side) -->
+        <div class="nav-logo">
+          <a href="index.html">
+            <img src="iffco_pr.png" alt="IFFCO Logo" class="logo">
+          </a>
+          <span class="company-name">IFFCO</span>
         </div>
-      </nav>
+  
+        <!-- ✅ Navigation Links (Right side, like products.html) -->
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link active">About</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="https://www.iffco.in/en/contact-us" class="nav-link">Contact</a>
+        </div>
+  
+        <!-- Close button (optional for small screens) -->
+        <button class="nav-close" onclick="window.close()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </nav>
+  
       
 
     <div class="container">
