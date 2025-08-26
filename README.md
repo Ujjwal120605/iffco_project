@@ -7,8 +7,6 @@ It provides a clean and user-friendly interface for employees to log in, with Go
 
 🔐 Employee Login with username & password.
 
-👁️ Password toggle (show/hide).
-
 ⚡ Google Sign-In integration using OAuth 2.0.
 
 🎨 Modern UI/UX with glassmorphism and animated background.
