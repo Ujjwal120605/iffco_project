@@ -55,6 +55,33 @@
             align-items: center;
             gap: 0.75rem;
         }
+        .nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #2c5530;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: #2c5530;
+  color: white;
+  box-shadow: 0 4px 10px rgba(44, 85, 48, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background: #2c5530;
+  color: white;
+}
+
 
         .logo {
             width: 45px;
@@ -347,15 +374,29 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzI5ODA0MSIvPgogIDx0ZXh0IHg9IjMwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iODAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SUZGQ088L3RleHQ+CiAgPHRleHQgeD0iMzAwIiB5PSIyNDAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkluZGlhbiBGYXJtZXJzIEZlcnRpbGlzZXIgQ29vcGVyYXRpdmUgTGltaXRlZDwvdGV4dD4KPC9zdmc+" alt="IFFCO Logo" class="logo">
-                <span class="company-name">IFFCO</span>
-            </div>
-            <button class="nav-close" onclick="window.close()">
-                <i class="fas fa-times"></i>
-            </button>
+          <!-- Logo -->
+          <div class="nav-logo">
+            <a href="index.html">
+              <img src="iffco_pr.png" alt="IFFCO Logo" class="logo">
+            </a>
+            <span class="company-name">IFFCO</span>
+          </div>
+      
+          <!-- Navigation Links -->
+          <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="products.html" class="nav-link">Products</a>
+            <a href="https://www.iffco.in/en/contact-us" class="nav-link">Contact</a>
+          </div>
+      
+          <!-- Close button (if you want it on smaller screens) -->
+          <button class="nav-close" onclick="window.close()">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
-    </nav>
+      </nav>
+      
 
     <div class="container">
         <div class="hero">
