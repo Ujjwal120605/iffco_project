@@ -2,6 +2,8 @@
 
 This project is a modern and secure employee login portal developed during my internship at Indian Farmers Fertiliser Cooperative Limited (IFFCO).
 It provides a clean and user-friendly interface for employees to log in, with Google Sign-In integration, animated background, and a responsive design.
+![Uploading Screenshot 2025-08-27 at 1.27.19 PM.png…]()
+
 
 🚀 Features
 
