@@ -6,8 +6,6 @@
     <title>IFFCO - Employee Portal Login</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
     <style>
         * {
             margin: 0;
@@ -141,32 +139,31 @@
         }
 
         .nav-links {
-    display: flex;
-    gap: 2rem;
-}
+            display: flex;
+            gap: 2rem;
+        }
 
-.nav-link {
-    text-decoration: none;
-    color: #2c5530;  /* IFFCO Green */
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
+        .nav-link {
+            text-decoration: none;
+            color: #2c5530;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
 
-.nav-link:hover {
-    background: #2c5530;
-    color: white;
-    box-shadow: 0 4px 10px rgba(44, 85, 48, 0.2);
-    transform: translateY(-2px);
-}
+        .nav-link:hover {
+            background: #2c5530;
+            color: white;
+            box-shadow: 0 4px 10px rgba(44, 85, 48, 0.2);
+            transform: translateY(-2px);
+        }
 
-.nav-link:active {
-    transform: translateY(1px);
-    box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
-}
-
+        .nav-link:active {
+            transform: translateY(1px);
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+        }
 
         /* Main Container */
         .container {
@@ -195,7 +192,6 @@
         .info-panel {
             background: url('iffco_pic.png') no-repeat center center;
             background-size: cover;
-            color: #2c5530;
             padding: 3rem;
             display: flex;
             flex-direction: column;
@@ -209,52 +205,6 @@
 
         .info-panel:hover {
             filter: brightness(1);
-        }
-
-        .company-title,
-        .company-subtitle,
-        .company-description,
-        .feature-item {
-            color: #2c5530;
-        }
-
-        .company-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .company-subtitle {
-            font-size: 1.25rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-
-        .company-description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .features {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .feature-item i {
-            width: 20px;
         }
 
         /* Login Panel */
@@ -412,77 +362,6 @@
             display: block;
         }
 
-        /* Alternative Login */
-        .alternative-login {
-            margin-top: 2rem;
-        }
-
-        .divider {
-            text-align: center;
-            margin: 1.5rem 0;
-            position: relative;
-        }
-
-        .divider::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #e5e7eb;
-        }
-
-        .divider span {
-            background: white;
-            padding: 0 1rem;
-            color: #9ca3af;
-            font-size: 0.9rem;
-        }
-
-        .social-btn {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            background: white;
-            color: #374151;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-btn:hover {
-            border-color: #2c5530;
-            background: #f9fafb;
-        }
-
-        .help-section {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .help-section p {
-            color: #9ca3af;
-            font-size: 0.9rem;
-        }
-
-        .help-link {
-            color: #2c5530;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .help-link:hover {
-            text-decoration: underline;
-        }
-
         /* Message Container */
         .message-container {
             position: fixed;
@@ -524,153 +403,134 @@
             }
         }
 
-        /* OTP Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
+        /* Dashboard Styles */
+        .dashboard {
             display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            animation: fadeIn 0.3s ease;
+            min-height: 100vh;
+            background: #f8fafc;
         }
 
-        .modal-overlay.show {
-            display: flex;
-        }
-
-        .modal {
+        .dashboard-header {
             background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-            transform: translateY(-20px);
-            animation: slideUp 0.3s ease;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .modal-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .modal-header h3 {
+        .dashboard-title {
             font-size: 1.5rem;
             color: #1e293b;
-            margin-bottom: 0.5rem;
-        }
-
-        .modal-header p {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        .otp-input-group {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-
-        .otp-input {
-            width: 50px;
-            height: 50px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 1.2rem;
             font-weight: 600;
-            transition: all 0.3s ease;
         }
 
-        .otp-input:focus {
-            outline: none;
-            border-color: #2c5530;
-            box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.1);
-        }
-
-        .otp-actions {
+        .user-info {
             display: flex;
+            align-items: center;
             gap: 1rem;
         }
 
-        .btn-secondary {
-            flex: 1;
-            padding: 0.75rem;
-            border: 2px solid #e5e7eb;
-            background: white;
-            color: #374151;
-            border-radius: 8px;
-            font-weight: 500;
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: #2c5530;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logout-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease;
         }
 
-        .btn-secondary:hover {
-            border-color: #2c5530;
-            background: #f9fafb;
+        .logout-btn:hover {
+            background: #dc2626;
         }
 
-        .btn-primary {
-            flex: 2;
-            padding: 0.75rem;
+        .dashboard-content {
+            padding: 2rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: #2c5530;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .card-content {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-btn {
             background: linear-gradient(135deg, #2c5530 0%, #1e3a20 100%);
             color: white;
             border: none;
+            padding: 1rem;
             border-radius: 8px;
-            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(44, 85, 48, 0.3);
-        }
-
-        .resend-otp {
-            text-align: center;
-            margin-top: 1rem;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        .resend-link {
-            color: #2c5530;
-            text-decoration: none;
             font-weight: 500;
-            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
-        .resend-link:hover {
-            text-decoration: underline;
-        }
-
-        .resend-link.disabled {
-            color: #9ca3af;
-            cursor: not-allowed;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 85, 48, 0.3);
         }
 
         /* Responsive Design */
@@ -693,19 +553,12 @@
                 padding: 2rem;
             }
 
-            .nav-links {
-                display: none;
+            .dashboard-grid {
+                grid-template-columns: 1fr;
             }
 
-            .modal {
-                width: 95%;
-                padding: 1.5rem;
-            }
-
-            .otp-input {
-                width: 45px;
-                height: 45px;
-                font-size: 1rem;
+            .quick-actions {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -721,120 +574,182 @@
         </div>
     </div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-          <div class="nav-logo">
-            <a href="index.html">
-              <img src="iffco_pr.png" alt="IFFCO Logo" class="logo">
-            </a>
-            <span class="company-name">IFFCO</span>
-          </div>
-      
-          <div class="nav-links">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="products.html" class="nav-link">Products</a>
-            <a href="https://www.iffco.in/en/contact-us" class="nav-link">Contact</a>
-          </div>
-        </div>
-      </nav>
-      
-      
+    <!-- Login Page -->
+    <div id="loginPage">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="iffco_pr.png" alt="IFFCO Logo" class="logo">
+                    </a>
+                    <span class="company-name">IFFCO</span>
+                </div>
 
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="https://www.iffco.in/en/contact-us" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
 
-    <div class="container">
-        <div class="login-wrapper">
-            <div class="info-panel"></div>
+        <div class="container">
+            <div class="login-wrapper">
+                <div class="info-panel"></div>
 
-            <div class="login-panel">
-                <div class="login-container">
-                    <div class="login-header">
-                        <h2>Welcome Back</h2>
-                        <p>Please sign in to your account</p>
-                    </div>
+                <div class="login-panel">
+                    <div class="login-container">
+                        <div class="login-header">
+                            <h2>Welcome Back</h2>
+                            <p>Please sign in to your account</p>
+                        </div>
 
-                    <form class="login-form" id="loginForm">
-                        <div class="form-group">
-                            <label for="username">Username / Employee ID</label>
-                            <div class="input-group">
-                                <i class="fas fa-user input-icon"></i>
-                                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                        <form class="login-form" id="loginForm">
+                            <div class="form-group">
+                                <label for="username">Username / Employee ID</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <div class="input-group">
-                                <i class="fas fa-lock input-icon"></i>
-                                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                                <button type="button" class="toggle-password" id="togglePassword">
-                                    <i class="fas fa-eye"></i>
-                                </button>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="input-group">
+                                    <i class="fas fa-lock input-icon"></i>
+                                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                                    <button type="button" class="toggle-password" id="togglePassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-options">
-                            <label class="checkbox-container">
-                                <input type="checkbox" id="rememberMe">
-                                <span class="checkmark"></span>
-                                Remember me
-                            </label>
-                            <a href="#" class="forgot-password">Forgot Password?</a>
-                        </div>
-
-                        <button type="submit" class="login-btn" id="loginBtn">
-                            <span class="btn-text">Sign In</span>
-                            <div class="loading-spinner" id="loadingSpinner">
-                                <i class="fas fa-spinner fa-spin"></i>
+                            <div class="form-options">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="rememberMe">
+                                    <span class="checkmark"></span>
+                                    Remember me
+                                </label>
+                                <a href="#" class="forgot-password">Forgot Password?</a>
                             </div>
-                        </button>
-                    </form>
 
-                    <div class="alternative-login">
-                        <div class="divider">
-                            <span>Or continue with</span>
-                        </div>
-                        <div class="social-login">
-                            <button class="social-btn google-btn" id="googleSignIn">
-                                <i class="fab fa-google"></i>
-                                Continue with Google
+                            <button type="submit" class="login-btn" id="loginBtn">
+                                <span class="btn-text">Sign In</span>
+                                <div class="loading-spinner" id="loadingSpinner">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </div>
                             </button>
-                        </div>
-                    </div>
-
-                    <div class="help-section">
-                        <p>Need help? <a href="https://www.iffco.in/en/contact-us" class="help-link" target="_blank">Contact IT Support</a></p>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- OTP Modal -->
-    <div class="modal-overlay" id="otpModal">
-        <div class="modal">
-            <div class="modal-header">
-                <h3>Enter OTP</h3>
-                <p>We've sent a 6-digit code to <span id="emailDisplay"></span></p>
+    <!-- Dashboard Page -->
+    <div id="dashboardPage" class="dashboard">
+        <div class="dashboard-header">
+            <h1 class="dashboard-title">IFFCO Dashboard</h1>
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <span id="userName">Employee</span>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
             </div>
-            
-            <div class="otp-input-group">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" id="otp1">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" id="otp2">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" id="otp3">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" id="otp4">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" id="otp5">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" id="otp6">
+        </div>
+
+        <div class="dashboard-content">
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="card-title">Production Analytics</h3>
+                    </div>
+                    <div class="card-content">
+                        Monitor real-time production metrics and fertilizer output across all IFFCO facilities.
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <h3 class="card-title">Inventory Management</h3>
+                    </div>
+                    <div class="card-content">
+                        Track inventory levels, raw materials, and finished products across warehouses.
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3 class="card-title">Distribution Network</h3>
+                    </div>
+                    <div class="card-content">
+                        Manage distribution to societies and track delivery status nationwide.
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="card-title">Society Management</h3>
+                    </div>
+                    <div class="card-content">
+                        Connect with 36,000+ cooperative societies and manage relationships.
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="card-title">Product Development</h3>
+                    </div>
+                    <div class="card-content">
+                        Oversee development of new fertilizers and agricultural innovations.
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="card-title">Global Operations</h3>
+                    </div>
+                    <div class="card-content">
+                        Monitor international operations and export activities worldwide.
+                    </div>
+                </div>
             </div>
-            
-            <div class="otp-actions">
-                <button type="button" class="btn-secondary" id="cancelOtp">Cancel</button>
-                <button type="button" class="btn-primary" id="verifyOtp">Verify OTP</button>
-            </div>
-            
-            <div class="resend-otp">
-                <p>Didn't receive the code? <span class="resend-link" id="resendOtp">Resend OTP</span></p>
-                <p id="resendTimer" style="display: none;">Resend in <span id="timerCount">30</span> seconds</p>
+
+            <div class="quick-actions">
+                <button class="action-btn" onclick="alert('Production Report Generated!')">
+                    <i class="fas fa-file-alt"></i>
+                    Generate Report
+                </button>
+                <button class="action-btn" onclick="alert('Quality Check Initiated!')">
+                    <i class="fas fa-check-circle"></i>
+                    Quality Check
+                </button>
+                <button class="action-btn" onclick="alert('Inventory Updated!')">
+                    <i class="fas fa-sync"></i>
+                    Update Inventory
+                </button>
+                <button class="action-btn" onclick="alert('Distribution Scheduled!')">
+                    <i class="fas fa-calendar"></i>
+                    Schedule Distribution
+                </button>
             </div>
         </div>
     </div>
@@ -842,7 +757,7 @@
     <div class="message-container" id="messageContainer">
         <div class="message success" id="successMessage">
             <i class="fas fa-check-circle"></i>
-            <span>Login successful! Redirecting...</span>
+            <span>Login successful! Welcome!</span>
         </div>
         <div class="message error" id="errorMessage">
             <i class="fas fa-exclamation-circle"></i>
@@ -851,6 +766,23 @@
     </div>
 
     <script>
+        // Valid credentials
+        const validCredentials = {
+            'ujjwal': '123456',
+            'admin': 'admin123',
+            'manager': 'manager123',
+            'employee': 'emp123',
+            'demo': 'demo123'
+        };
+
+        const userProfiles = {
+            'ujjwal': { name: 'Ujjwal Bajpai', role: 'Sales Manager', avatar: 'UB' },
+            'admin': { name: 'System Administrator', role: 'Admin', avatar: 'SA' },
+            'manager': { name: 'Production Manager', role: 'Manager', avatar: 'PM' },
+            'employee': { name: 'Employee', role: 'Staff', avatar: 'E' },
+            'demo': { name: 'Demo User', role: 'Demo', avatar: 'D' }
+        };
+
         // Toggle password visibility
         document.getElementById('togglePassword').addEventListener('click', function() {
             const password = document.getElementById('password');
@@ -867,68 +799,30 @@
             }
         });
 
-        // About page navigation
-        document.getElementById('aboutLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open('about.html', '_blank');
-        });
-
-        // OTP Modal functionality
-        const otpModal = document.getElementById('otpModal');
-        const otpInputs = document.querySelectorAll('.otp-input');
-        const verifyOtpBtn = document.getElementById('verifyOtp');
-        const cancelOtpBtn = document.getElementById('cancelOtp');
-        const resendOtpLink = document.getElementById('resendOtp');
-        let currentOtp = '';
-        let resendTimer = null;
-
-        // OTP input navigation
-        otpInputs.forEach((input, index) => {
-            input.addEventListener('input', function(e) {
-                if (e.target.value.length === 1 && index < otpInputs.length - 1) {
-                    otpInputs[index + 1].focus();
-                }
-            });
-
-            input.addEventListener('keydown', function(e) {
-                if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
-                    otpInputs[index - 1].focus();
-                }
-            });
-        });
-
-        // Form submission with OTP
+        // Form submission
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            const username = document.getElementById('username').value.toLowerCase().trim();
+            const password = document.getElementById('password').value;
             const loginBtn = document.getElementById('loginBtn');
             const successMsg = document.getElementById('successMessage');
             const errorMsg = document.getElementById('errorMessage');
             
+            // Show loading state
             loginBtn.classList.add('loading');
             
             setTimeout(() => {
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-                
-                // Check if this is Ujjwal Bajpai (requires OTP)
-                if (username.toLowerCase() === 'ujjwal' && password === '123456') {
-                    loginBtn.classList.remove('loading');
-                    showOtpModal('bajpaiujjwal3@gmail.com');
-                    return;
-                }
-                
-                // Regular login for other users
-                if ((username === 'admin' && password === 'admin') || 
-                    (username === 'manager' && password === 'manager123') ||
-                    (username === 'employee' && password === 'emp123') ||
-                    (username === 'demo' && password === 'demo123')) {
+                // Check credentials
+                if (validCredentials[username] && validCredentials[username] === password) {
+                    // Valid credentials - show success and redirect to dashboard
                     successMsg.style.display = 'flex';
                     setTimeout(() => {
                         successMsg.style.display = 'none';
-                        console.log('Redirecting to dashboard...');
-                    }, 2000);
+                        showDashboard(username);
+                    }, 1500);
                 } else {
+                    // Invalid credentials
                     errorMsg.style.display = 'flex';
                     setTimeout(() => {
                         errorMsg.style.display = 'none';
@@ -939,113 +833,41 @@
             }, 1500);
         });
 
-        function showOtpModal(email) {
-            document.getElementById('emailDisplay').textContent = email;
-            otpModal.classList.add('show');
-            generateOtp();
-            otpInputs[0].focus();
-        }
-
-        function hideOtpModal() {
-            otpModal.classList.remove('show');
-            clearOtpInputs();
-            clearTimeout(resendTimer);
-        }
-
-        function clearOtpInputs() {
-            otpInputs.forEach(input => input.value = '');
-        }
-
-        function generateOtp() {
-            currentOtp = Math.floor(100000 + Math.random() * 900000).toString();
-            console.log('Generated OTP for demo:', currentOtp);
-            showMessage(`Demo OTP sent: ${currentOtp}`, 'info');
-            startResendTimer();
-        }
-
-        function startResendTimer() {
-            let timeLeft = 30;
-            const timerDisplay = document.getElementById('timerCount');
-            const resendTimer = document.getElementById('resendTimer');
-            const resendLink = document.getElementById('resendOtp');
+        function showDashboard(username) {
+            const user = userProfiles[username];
             
-            resendLink.classList.add('disabled');
-            resendTimer.style.display = 'block';
+            // Hide login page and show dashboard
+            document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('dashboardPage').style.display = 'block';
             
-            const countdown = setInterval(() => {
-                timerDisplay.textContent = timeLeft;
-                timeLeft--;
-                
-                if (timeLeft < 0) {
-                    clearInterval(countdown);
-                    resendLink.classList.remove('disabled');
-                    resendTimer.style.display = 'none';
-                }
-            }, 1000);
-        }
-
-        function verifyOtp() {
-            const enteredOtp = Array.from(otpInputs).map(input => input.value).join('');
+            // Update user info
+            document.getElementById('userName').textContent = user.name;
+            document.getElementById('userAvatar').textContent = user.avatar;
             
-            if (enteredOtp.length !== 6) {
-                showMessage('Please enter complete 6-digit OTP', 'error');
-                return;
-            }
-            
-            verifyOtpBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...';
-            verifyOtpBtn.disabled = true;
-            
+            // Welcome message
             setTimeout(() => {
-                if (enteredOtp === currentOtp) {
-                    showMessage('OTP verified successfully! Welcome Ujjwal!', 'success');
-                    hideOtpModal();
-                    setTimeout(() => {
-                        alert(`Welcome Ujjwal Bajpai!\n\nEmployee ID: IFFCO003\nEmail: bajpaiujjwal3@gmail.com\nRole: Employee\nDepartment: Sales\n\nRedirecting to dashboard...`);
-                        document.getElementById('loginForm').reset();
-                    }, 1000);
-                } else {
-                    showMessage('Invalid OTP. Please try again.', 'error');
-                }
+                alert(`Welcome to IFFCO Dashboard, ${user.name}!\n\nRole: ${user.role}\n\nYou now have access to all IFFCO management tools and analytics.`);
+            }, 500);
+        }
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Show login page and hide dashboard
+                document.getElementById('dashboardPage').style.display = 'none';
+                document.getElementById('loginPage').style.display = 'block';
                 
-                verifyOtpBtn.innerHTML = 'Verify OTP';
-                verifyOtpBtn.disabled = false;
-            }, 2000);
-        }
-
-        function showMessage(text, type) {
-            const messageContainer = document.getElementById('messageContainer');
-            const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
-            
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
-            
-            const targetMessage = type === 'success' ? successMessage : errorMessage;
-            const messageText = targetMessage.querySelector('span');
-            
-            messageText.textContent = text;
-            targetMessage.style.display = 'flex';
-            
-            setTimeout(() => {
-                targetMessage.style.display = 'none';
-            }, 5000);
-        }
-
-        // Event listeners
-        verifyOtpBtn.addEventListener('click', verifyOtp);
-        cancelOtpBtn.addEventListener('click', hideOtpModal);
-        
-        resendOtpLink.addEventListener('click', function() {
-            if (!this.classList.contains('disabled')) {
-                generateOtp();
-                showMessage('New OTP sent!', 'success');
+                // Clear form
+                document.getElementById('loginForm').reset();
+                
+                alert('Logged out successfully!');
             }
         });
 
-        // Google Sign-In (placeholder)
-        document.getElementById('googleSignIn').addEventListener('click', function() {
-            console.log('Google Sign-In clicked');
-            alert('Google Sign-In integration would be implemented here');
+        // Forgot password functionality
+        document.querySelector('.forgot-password').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Password reset functionality would be implemented here.\n\nFor demo purposes:\n- ujjwal / 123456\n- admin / admin123\n- manager / manager123\n- employee / emp123\n- demo / demo123');
         });
 
         // Background animation
@@ -1055,3 +877,6 @@
                 shape.style.animationDelay = `${index * 0.5}s`;
             });
         });
+    </script>
+</body>
+</html>
