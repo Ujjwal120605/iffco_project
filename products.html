@@ -72,7 +72,6 @@
       color: #2c5530;
     }
 
-    /* ✅ More clickable nav links (like about.html) */
     .nav-links {
       display: flex;
       gap: 2rem;
@@ -129,7 +128,7 @@
       margin-bottom: 1rem;
     }
 
-    /* Product cards */
+    /* Product cards with background images */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -138,6 +137,7 @@
     }
 
     .product-card {
+      position: relative;
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(15px);
       border-radius: 16px;
@@ -145,6 +145,37 @@
       text-align: center;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.08;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover::before {
+      opacity: 0.12;
+    }
+
+    .product-card.ammonia::before {
+      background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800');
+    }
+
+    .product-card.urea::before {
+      background-image: url('https://images.unsplash.com/photo-1574263867128-e8c18520d0f5?w=800');
+    }
+
+    .product-card.nano-urea::before {
+      background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800');
     }
 
     .product-card:hover {
@@ -152,9 +183,34 @@
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     }
 
-    .product-card img {
+    .product-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .product-icon {
       width: 80px;
-      margin-bottom: 1rem;
+      height: 80px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 2.5rem;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .ammonia .product-icon {
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    }
+
+    .urea .product-icon {
+      background: linear-gradient(135deg, #2196F3, #1565C0);
+    }
+
+    .nano-urea .product-icon {
+      background: linear-gradient(135deg, #9C27B0, #6A1B9A);
     }
 
     .product-card h3 {
@@ -176,6 +232,13 @@
       }
       .product-card {
         padding: 1.5rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -209,24 +272,36 @@
     <!-- Products -->
     <div class="product-grid">
       <!-- Ammonia -->
-      <div class="product-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Ammonia">
-        <h3>Ammonia</h3>
-        <p>Produced as a base chemical for fertilizers, Ammonia is essential in agriculture and industries worldwide.</p>
+      <div class="product-card ammonia">
+        <div class="product-content">
+          <div class="product-icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h3>Ammonia</h3>
+          <p>Produced as a base chemical for fertilizers, Ammonia is essential in agriculture and industries worldwide.</p>
+        </div>
       </div>
 
       <!-- Urea -->
-      <div class="product-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/3143/3143643.png" alt="Urea">
-        <h3>Urea</h3>
-        <p>IFFCO’s high-quality Urea delivers nitrogen efficiently, ensuring better crop growth and soil fertility.</p>
+      <div class="product-card urea">
+        <div class="product-content">
+          <div class="product-icon">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <h3>Urea</h3>
+          <p>IFFCO's high-quality Urea delivers nitrogen efficiently, ensuring better crop growth and soil fertility.</p>
+        </div>
       </div>
 
       <!-- Nano Urea -->
-      <div class="product-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/4202/4202849.png" alt="Nano Urea">
-        <h3>Nano Urea</h3>
-        <p>A revolutionary innovation by IFFCO, Nano Urea enhances productivity, reduces cost, and lowers environmental impact.</p>
+      <div class="product-card nano-urea">
+        <div class="product-content">
+          <div class="product-icon">
+            <i class="fas fa-atom"></i>
+          </div>
+          <h3>Nano Urea</h3>
+          <p>A revolutionary innovation by IFFCO, Nano Urea enhances productivity, reduces cost, and lowers environmental impact.</p>
+        </div>
       </div>
     </div>
   </div>
