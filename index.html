@@ -648,223 +648,170 @@
     </div>
 
     <!-- Dashboard Page -->
-    <div id="dashboardPage" class="dashboard">
-        <div class="dashboard-header">
-            <h1 class="dashboard-title">IFFCO Dashboard</h1>
-            <div class="user-info">
-                <div class="user-avatar" id="userAvatar">U</div>
-                <span id="userName">Employee</span>
-                <button class="logout-btn" id="logoutBtn">Logout</button>
-            </div>
-        </div>
-
-        <div class="dashboard-content">
-            <div class="dashboard-grid">
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="card-title">Production Analytics</h3>
-                    </div>
-                    <div class="card-content">
-                        Monitor real-time production metrics and fertilizer output across all IFFCO facilities.
-                    </div>
-                </div>
-
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-warehouse"></i>
-                        </div>
-                        <h3 class="card-title">Inventory Management</h3>
-                    </div>
-                    <div class="card-content">
-                        Track inventory levels, raw materials, and finished products across warehouses.
-                    </div>
-                </div>
-
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <h3 class="card-title">Distribution Network</h3>
-                    </div>
-                    <div class="card-content">
-                        Manage distribution to societies and track delivery status nationwide.
-                    </div>
-                </div>
-
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="card-title">Society Management</h3>
-                    </div>
-                    <div class="card-content">
-                        Connect with 36,000+ cooperative societies and manage relationships.
-                    </div>
-                </div>
-
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                        <h3 class="card-title">Product Development</h3>
-                    </div>
-                    <div class="card-content">
-                        Oversee development of new fertilizers and agricultural innovations.
-                    </div>
-                </div>
-
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3 class="card-title">Global Operations</h3>
-                    </div>
-                    <div class="card-content">
-                        Monitor international operations and export activities worldwide.
-                    </div>
-                </div>
-            </div>
-
-            <div class="quick-actions">
-                <button class="action-btn" onclick="alert('Production Report Generated!')">
-                    <i class="fas fa-file-alt"></i>
-                    Generate Report
-                </button>
-                <button class="action-btn" onclick="alert('Quality Check Initiated!')">
-                    <i class="fas fa-check-circle"></i>
-                    Quality Check
-                </button>
-                <button class="action-btn" onclick="alert('Inventory Updated!')">
-                    <i class="fas fa-sync"></i>
-                    Update Inventory
-                </button>
-                <button class="action-btn" onclick="alert('Distribution Scheduled!')">
-                    <i class="fas fa-calendar"></i>
-                    Schedule Distribution
-                </button>
-            </div>
-        </div>
+  <div id="dashboardPage" class="hidden">
+    <div class="dashboard-header">
+      <h1 class="dashboard-title">IFFCO Employee Self Service</h1>
+      <div class="user-info">
+        <div class="user-avatar" id="userAvatar">U</div>
+        <span id="userName">Employee</span>
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+      </div>
     </div>
 
-    <div class="message-container" id="messageContainer">
-        <div class="message success" id="successMessage">
-            <i class="fas fa-check-circle"></i>
-            <span>Login successful! Welcome!</span>
+    <div class="dashboard-content">
+      <div class="grid-2">
+        
+        <!-- Left Side -->
+        <div>
+          <!-- Notifications -->
+          <div class="card">
+            <h3>Notifications</h3>
+            <div class="notification">There is no pending notification as on <span id="notifDate"></span></div>
+          </div>
+
+          <!-- Salary -->
+          <div class="card">
+            <h3>Latest Salary</h3>
+            <div class="salary-list" id="salaryList"></div>
+          </div>
         </div>
-        <div class="message error" id="errorMessage">
-            <i class="fas fa-exclamation-circle"></i>
-            <span>Invalid credentials. Please try again.</span>
+
+        <!-- Right Side -->
+        <div>
+          <!-- Leave Details -->
+          <div class="card">
+            <h3>Leave Details</h3>
+            <div class="leave-boxes">
+              <div class="leave-box" id="leaveCL"></div>
+              <div class="leave-box" id="leaveEL"></div>
+              <div class="leave-box" id="leaveHPL"></div>
+            </div>
+          </div>
+
+          <!-- Calendar -->
+          <div class="card">
+            <h3>Leave Calendar - September 2025</h3>
+            <table class="calendar">
+              <thead>
+                <tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td class="gray">6</td><td class="gray">7</td></tr>
+                <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td class="gray">13</td><td class="gray">14</td></tr>
+                <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td class="gray">20</td><td class="gray">21</td></tr>
+                <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td class="gray">27</td><td class="gray">28</td></tr>
+                <tr><td>29</td><td>30</td><td></td><td></td><td></td><td class="gray"></td><td class="gray"></td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-    <script>
-        // Valid credentials
-        const validCredentials = {
-            'ujjwal': '123456',
-            'admin': 'admin123',
-            'manager': 'manager123',
-            'employee': 'emp123',
-            'demo': 'demo123',
-            'sudhanshu':'123456'
-        };
+  <script>
+    // Valid credentials
+    const validCredentials = {
+      'ujjwal': '123456',
+      'admin': 'admin123',
+      'manager': 'manager123',
+      'employee': 'emp123',
+      'demo': 'demo123',
+      'sudhanshu':'123456'
+    };
 
-        const userProfiles = {
-            'ujjwal': { name: 'Ujjwal Bajpai', role: 'Vocational Trainee', avatar: 'UB' },
-            'admin': { name: 'System Administrator', role: 'Admin', avatar: 'SA' },
-            'manager': { name: 'Production Manager', role: 'Manager', avatar: 'PM' },
-            'employee': { name: 'Employee', role: 'Staff', avatar: 'E' },
-            'demo': { name: 'Demo User', role: 'Demo', avatar: 'D' },
-            'sudhanshu':{name:'sudhanshu',role:'deputy manager',avatar:'S'}
-        };
+    const userProfiles = {
+      'ujjwal': { name: 'Ujjwal Bajpai', role: 'Vocational Trainee', avatar: 'UB' },
+      'admin': { name: 'System Administrator', role: 'Admin', avatar: 'SA' },
+      'manager': { name: 'Production Manager', role: 'Manager', avatar: 'PM' },
+      'employee': { name: 'Employee', role: 'Staff', avatar: 'E' },
+      'demo': { name: 'Demo User', role: 'Demo', avatar: 'D' },
+      'sudhanshu':{name:'sudhanshu',role:'deputy manager',avatar:'S'}
+    };
 
-        // Toggle password visibility
-        document.getElementById('togglePassword').addEventListener('click', function() {
-            const password = document.getElementById('password');
-            const icon = this.querySelector('i');
-            
-            if (password.type === 'password') {
-                password.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
-            } else {
-                password.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
-            }
-        });
+    const salaryData = [
+      { month: "2025, AUGUST", amount: "112978 Rs" },
+      { month: "2025, JULY", amount: "112290 Rs" },
+      { month: "2025, JUNE", amount: "114326 Rs" },
+      { month: "2025, MAY", amount: "114778 Rs" },
+      { month: "2025, APRIL", amount: "114778 Rs" },
+      { month: "2025, MARCH", amount: "54468 Rs" },
+      { month: "2025, FEBRUARY", amount: "70561 Rs" },
+      { month: "2025, JANUARY", amount: "74131 Rs" }
+    ];
 
-        // Form submission
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value.toLowerCase().trim();
-            const password = document.getElementById('password').value;
-            const loginBtn = document.getElementById('loginBtn');
-            const successMsg = document.getElementById('successMessage');
-            const errorMsg = document.getElementById('errorMessage');
-            
-            // Show loading state
-            loginBtn.classList.add('loading');
-            
-            setTimeout(() => {
-                // Check credentials
-                if (validCredentials[username] && validCredentials[username] === password) {
-                    // Valid credentials - show success and redirect to dashboard
-                    successMsg.style.display = 'flex';
-                    setTimeout(() => {
-                        successMsg.style.display = 'none';
-                        showDashboard(username);
-                    }, 1500);
-                } else {
-                    // Invalid credentials
-                    errorMsg.style.display = 'flex';
-                    setTimeout(() => {
-                        errorMsg.style.display = 'none';
-                    }, 3000);
-                }
-                
-                loginBtn.classList.remove('loading');
-            }, 1500);
-        });
+    const leaveData = {
+      CL: { available: 9, opening: 14, accrued: 0, availed: 5 },
+      EL: { available: 252, opening: 270, accrued: 22, availed: 40 },
+      HPL:{ available: 232, opening: 233, accrued: 13, availed: 14 }
+    };
 
-        function showDashboard(username) {
-            const user = userProfiles[username];
-            
-            // Hide login page and show dashboard
-            document.getElementById('loginPage').style.display = 'none';
-            document.getElementById('dashboardPage').style.display = 'block';
-            
-            // Update user info
-            document.getElementById('userName').textContent = user.name;
-            document.getElementById('userAvatar').textContent = user.avatar;
-            
-            // Welcome message
-            setTimeout(() => {
-                alert(`Welcome to IFFCO Dashboard, ${user.name}!\n\nRole: ${user.role}\n\nYou now have access to all IFFCO management tools and analytics.`);
-            }, 500);
-        }
+    // Toggle password visibility
+    document.getElementById('togglePassword').addEventListener('click', function() {
+      const password = document.getElementById('password');
+      const icon = this.querySelector('i');
+      if (password.type === 'password') {
+        password.type = 'text';
+        icon.classList.replace('fa-eye','fa-eye-slash');
+      } else {
+        password.type = 'password';
+        icon.classList.replace('fa-eye-slash','fa-eye');
+      }
+    });
 
-        // Logout functionality
-        document.getElementById('logoutBtn').addEventListener('click', function() {
-            if (confirm('Are you sure you want to logout?')) {
-                // Show login page and hide dashboard
-                document.getElementById('dashboardPage').style.display = 'none';
-                document.getElementById('loginPage').style.display = 'block';
-                
-                // Clear form
-                document.getElementById('loginForm').reset();
-                
-                alert('Logged out successfully!');
-            }
-        });
+    // Login
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.toLowerCase().trim();
+      const password = document.getElementById('password').value;
+
+      if (validCredentials[username] && validCredentials[username] === password) {
+        showDashboard(username);
+      } else {
+        alert("Invalid credentials!");
+      }
+    });
+
+    function showDashboard(username) {
+      const user = userProfiles[username];
+      document.getElementById('loginPage').style.display = 'none';
+      document.getElementById('dashboardPage').classList.remove('hidden');
+
+      document.getElementById('userName').textContent = user.name;
+      document.getElementById('userAvatar').textContent = user.avatar;
+      document.getElementById('notifDate').textContent = new Date().toLocaleString();
+
+      // Fill salary list
+      const salaryList = document.getElementById('salaryList');
+      salaryList.innerHTML = "";
+      salaryData.forEach(s => {
+        const div = document.createElement('div');
+        div.className = 'salary-item';
+        div.innerHTML = `<span>${s.month}</span><span>${s.amount} <i class="fa fa-download"></i></span>`;
+        salaryList.appendChild(div);
+      });
+
+      // Fill leave boxes
+      for (let key in leaveData) {
+        const box = leaveData[key];
+        document.getElementById(`leave${key}`).innerHTML = `
+          <h4>${key}</h4>
+          <p><strong>${box.available}</strong> Available</p>
+          <p>Opening: ${box.opening}</p>
+          <p>Accrued: ${box.accrued}</p>
+          <p>Availed: ${box.availed}</p>
+        `;
+      }
+    }
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+      if (confirm('Logout?')) {
+        document.getElementById('dashboardPage').classList.add('hidden');
+        document.getElementById('loginPage').style.display = 'block';
+        document.getElementById('loginForm').reset();
+      }
+    });
 
         // Forgot password functionality
         document.querySelector('.forgot-password').addEventListener('click', function(e) {
