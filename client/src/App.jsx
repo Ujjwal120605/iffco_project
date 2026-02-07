@@ -7,15 +7,19 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Units from './pages/Units';
 
+import Layout from './components/Layout';
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/products" element={<Products />} />
-      <Route path="/units" element={<Units />} />
-    </Routes>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/units" element={<Units />} />
+      </Routes>
+    </Layout>
   );
 }
 
