@@ -148,8 +148,8 @@
       overflow: hidden;
     }
 
-    .product-card::before {
-      content: '';
+    /* Background image sections for each product */
+    .product-card .bg-image {
       position: absolute;
       top: 0;
       left: 0;
@@ -157,25 +157,27 @@
       bottom: 0;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       opacity: 0.08;
       z-index: 1;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
     }
 
-    .product-card:hover::before {
-      opacity: 0.12;
+    .product-card:hover .bg-image {
+      opacity: 0.25;
     }
 
-    .product-card.ammonia::before {
-      background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800');
+    /* Individual background images - replace these URLs with your own images */
+    .ammonia .bg-image {
+      background-image: url('ammonia.jpeg'); /* Replace with your ammonia background image */
     }
 
-    .product-card.urea::before {
-      background-image: url('https://images.unsplash.com/photo-1574263867128-e8c18520d0f5?w=800');
+    .urea .bg-image {
+      background-image: url('urea.png'); /* Replace with your urea background image */
     }
 
-    .product-card.nano-urea::before {
-      background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800');
+    .nano-urea .bg-image {
+      background-image: url('iffco-nano-dap.jpeg'); /* Replace with your nano urea background image */
     }
 
     .product-card:hover {
@@ -273,6 +275,7 @@
     <div class="product-grid">
       <!-- Ammonia -->
       <div class="product-card ammonia">
+        <div class="bg-image"></div>
         <div class="product-content">
           <div class="product-icon">
             <i class="fas fa-industry"></i>
@@ -284,6 +287,7 @@
 
       <!-- Urea -->
       <div class="product-card urea">
+        <div class="bg-image"></div>
         <div class="product-content">
           <div class="product-icon">
             <i class="fas fa-seedling"></i>
@@ -295,6 +299,7 @@
 
       <!-- Nano Urea -->
       <div class="product-card nano-urea">
+        <div class="bg-image"></div>
         <div class="product-content">
           <div class="product-icon">
             <i class="fas fa-atom"></i>
