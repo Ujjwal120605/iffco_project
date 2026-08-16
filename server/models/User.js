@@ -31,6 +31,14 @@ const UserSchema = new mongoose.Schema({
     grade: {
         type: String,
         default: ''
+    },
+    empId: {
+        type: String,
+        default: ''
+    },
+    department: {
+        type: String,
+        default: ''
     }
 });
 

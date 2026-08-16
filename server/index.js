@@ -20,6 +20,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/iffco_pro
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/operations', require('./routes/operations'));
 
 app.get('/', (req, res) => {
     res.send('IFFCO Project API is running');

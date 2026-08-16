@@ -11,7 +11,7 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isLogin, setIsLogin] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
-    const [formData, setFormData] = useState({ name: '', email: '', password: '', unit: '', grade: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', password: '', unit: '', grade: '', department: '' });
     const [error, setError] = useState('');
     const [activeSection, setActiveSection] = useState(0);
     const containerRef = useRef(null);
@@ -44,7 +44,8 @@ const Home = () => {
                     email: formData.email,
                     password: formData.password,
                     unit: formData.unit,
-                    grade: formData.grade
+                    grade: formData.grade,
+                    department: formData.department
                 };
 
             const res = await axios.post(endpoint, payload);
@@ -222,6 +223,23 @@ const Home = () => {
                                                 <option value="" disabled className="bg-black text-gray-500">Select Grade</option>
                                                 {["Worker", "Assistant Manager", "Deputy Manager", "Manager", "Senior Manager", "Chief Manager", "DGM", "JGM", "GM", "Unit Head"].map(g => (
                                                     <option key={g} value={g} className="bg-black text-white">{g}</option>
+                                                ))}
+                                            </select>
+                                            <div className="absolute top-1/2 right-4 transform -translate-y-1/2 pointer-events-none text-gray-400 text-xs">▼</div>
+                                        </div>
+
+                                        {/* Department Selection */}
+                                        <div className="relative group">
+                                            <select
+                                                name="department"
+                                                value={formData.department || ''}
+                                                onChange={handleInputChange}
+                                                required
+                                                className="block w-full px-5 py-4 text-white bg-white/5 border border-white/10 rounded-xl appearance-none focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-all font-mono uppercase"
+                                            >
+                                                <option value="" disabled className="bg-black text-gray-500">Select Department</option>
+                                                {["Production", "Electrical", "Instrumentation", "Safety", "Quality Control", "Logistics"].map(d => (
+                                                    <option key={d} value={d} className="bg-black text-white">{d}</option>
                                                 ))}
                                             </select>
                                             <div className="absolute top-1/2 right-4 transform -translate-y-1/2 pointer-events-none text-gray-400 text-xs">▼</div>

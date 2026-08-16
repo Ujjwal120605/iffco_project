@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 
 // Register
 router.post('/signup', async (req, res) => {
-    const { username, email, password, unit, grade } = req.body;
+    const { username, email, password, unit, grade, department } = req.body;
     try {
         // Check if user exists (by email or username)
         let user = await User.findOne({
@@ -17,7 +17,17 @@ router.post('/signup', async (req, res) => {
             return res.status(400).json({ msg: 'User already exists (Email or Username taken)' });
         }
 
-        user = new User({ username, email, password, unit, grade });
+        const empId = 'IFFCO-' + Math.floor(1000 + Math.random() * 9000);
+
+        user = new User({ 
+            username, 
+            email, 
+            password, 
+            unit, 
+            grade, 
+            department: department || 'Production', 
+            empId 
+        });
         await user.save();
 
         // Create JWT payload
@@ -37,7 +47,9 @@ router.post('/signup', async (req, res) => {
                     email: user.email,
                     role: user.role,
                     unit: user.unit,
-                    grade: user.grade
+                    grade: user.grade,
+                    department: user.department,
+                    empId: user.empId
                 }
             });
         });
@@ -77,7 +89,9 @@ router.post('/login', async (req, res) => {
                     email: user.email,
                     role: user.role,
                     unit: user.unit,
-                    grade: user.grade
+                    grade: user.grade,
+                    department: user.department,
+                    empId: user.empId
                 }
             });
         });
@@ -89,7 +103,7 @@ router.post('/login', async (req, res) => {
 
 // Update Profile
 router.put('/update', async (req, res) => {
-    const { token, unit, grade, name } = req.body; // Expecting token in body for simplicity, or verify middleware
+    const { token, unit, grade, name, department } = req.body; // Expecting token in body for simplicity, or verify middleware
     // ideally use middleware to verify token and get user from req.user
 
     // For quick implementation without middleware setup check (assuming token is passed or we verify it here)
@@ -107,6 +121,7 @@ router.put('/update', async (req, res) => {
         if (unit) user.unit = unit;
         if (grade) user.grade = grade;
         if (name) user.username = name;
+        if (department) user.department = department;
 
         await user.save();
 
@@ -117,7 +132,9 @@ router.put('/update', async (req, res) => {
                 email: user.email,
                 role: user.role,
                 unit: user.unit,
-                grade: user.grade
+                grade: user.grade,
+                department: user.department,
+                empId: user.empId
             }
         });
 
